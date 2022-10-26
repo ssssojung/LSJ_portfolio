@@ -1,0 +1,53 @@
+li{list-style: none;}
+*{margin-bottom: 0;}
+#allMenu{
+    /* 컨텐츠만큼 내려오게 height를 넣어주지 않는다 */
+    width: 2rem;
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    position: relative;
+
+}
+#allMenu span{
+    display: block;
+    height: 2px;
+    background-color: black;
+    margin: 11px 0;
+}
+#allMenu:after,
+#allMenu:before{
+    content: "";
+    display: block;
+    position: absolute;
+    height: 2px;
+    background-color: black;
+    left: 0;
+    width: 100%;
+}
+#allMenu:after{
+    bottom: 0;
+}
+#allMenu:before{
+    top: 0;
+}
+#allMenu.open span{
+    display: none;
+}
+#allMenu.open:after{
+    transform: rotate(-45deg);
+}
+#allMenu.open:before{
+    transform: rotate(45deg);
+}
+#allMenu.open + #depth1{
+    display: block !important;
+    position: absolute;
+    background-color: black;
+    left: 0;right: 0;
+    padding: 20px;
+    top: 100%;
+}
+#allMenu.open + #depth1 a{
+    color: white;
+}
